@@ -15,26 +15,44 @@ nnoremap ç $
 nnoremap cç c$
 nnoremap dç d$
 "	Searching for <++> in a doc, used in snippets
-inoremap <Space><Space> <Esc>/<++><Enter>"_c4l
+inoremap <Space><Space> <Esc>/<++><Enter>:<Esc>c4l
 "	Auto-pairs
 inoremap " ""<Left>
 inoremap ' ''<Left>
 inoremap ( ()<Left>
 inoremap { {}<Left>
 inoremap [ []<Left>
+
 "	Plugins
 call plug#begin('~/.config/nvim/plugged')
 	" Lightline status line
 	Plug 'itchyny/lightline.vim'
 	" Theme
 	Plug 'sonph/onehalf', { 'rtp': 'vim' }
-	" Vimwiki
-	Plug 'vimwiki/vimwiki'
+	" Css colors
+	Plug 'ap/vim-css-color'
+	" Parser and better syntax highlighting
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 "	Initializing theme
 colorscheme onehalfdark
 let g:lightline = { 'colorscheme': 'onehalfdark' }
+
+"	Enabling treesitter highlighting
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
 
 "	C files
 "	Snippets
