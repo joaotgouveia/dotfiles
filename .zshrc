@@ -10,11 +10,11 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Neofetch and fortune
-neofetch | lolcat -S 22
-fortune | cowsay -f moose
+neofetch
+$(shuf -n 1 -e fortune bullshit) | cowsay -f $(ls /usr/share/cows/*.cow | shuf -n 1)
 
 # Aliases
-alias clear="clear;neofetch|lolcat -S 22"
+alias clear="clear;neofetch"
 alias shutdown="shutdown now"
 alias restart="shutdown -r now"
 alias mv="mv -v"
