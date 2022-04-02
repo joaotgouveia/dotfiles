@@ -9,7 +9,7 @@ settings:
   bindings.commands:
     global:
       normal:
-        aw: set-cmd-text :open www.archwiki.org/title/
+        aw: set-cmd-text :open https://wiki.archlinux.org/index.php?title=Special:Search&search=
         gh: set-cmd-text :open https://github.com/search?q=
         yt: set-cmd-text :open https://www.youtube.com/results?search_query=
   content.notifications.enabled:
