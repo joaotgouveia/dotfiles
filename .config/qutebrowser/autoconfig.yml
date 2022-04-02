@@ -10,6 +10,7 @@ settings:
     global:
       normal:
         aw: set-cmd-text :open www.archwiki.org/title/
+        gh: set-cmd-text :open https://github.com/search?q=
         yt: set-cmd-text :open https://www.youtube.com/results?search_query=
   content.notifications.enabled:
     https://www.reddit.com: false
