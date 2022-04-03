@@ -28,7 +28,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" Lightline status line
 	Plug 'itchyny/lightline.vim'
 	" Theme
-	Plug 'sonph/onehalf', { 'rtp': 'vim' }
+	Plug 'RRethy/nvim-base16'
 	" Css colors
 	Plug 'ap/vim-css-color'
 	" Parser and better syntax highlighting
@@ -36,18 +36,14 @@ call plug#begin('~/.config/nvim/plugged')
 call plug#end()
 
 "	Initializing theme
-colorscheme onehalfdark
-let g:lightline = { 'colorscheme': 'onehalfdark' }
+colorscheme base16-dracula
+let g:lightline = { 'colorscheme': 'solarized' }
 
 "	Enabling treesitter highlighting
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
 }
@@ -76,5 +72,5 @@ autocmd FileType c inoremap >s struct<Space><++><Space>{<Enter><++><Enter>};
 autocmd FileType c inoremap >t switch<Space>(<++>)<Space>{<Enter>case<Space><++>:<Enter><++><Enter>}
 " Remapping tag jumping
 autocmd FileType c nnoremap X <C-]>
-"	Create tags file for tag jumping and autocomplete
+" Create tags file for tag jumping and autocomplete
 autocmd! VimLeave *.c !ctags -R .
