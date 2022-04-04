@@ -49,9 +49,15 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+"	Bash snippets
+" Shebang
+autocmd FileType sh inoremap >h #!/bin/bash
+" If
+autocmd FileType sh inoremap >i if<Space>[<Space><++><Space>]<Enter>then<Enter><++><Enter>fi
+" For
+autocmd FileType sh inoremap >c for<Space><++><Space>in<Space><++><Enter>do<Enter><++><Enter>done
 
-"	C files
-"	Snippets
+"	C snippets
 " Standard headers
 autocmd FileType c inoremap >h #include<stdio.h><Enter>#include<stdlib.h><Enter><Enter>
 " Main
