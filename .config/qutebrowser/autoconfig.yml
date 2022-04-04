@@ -13,4 +13,5 @@ settings:
         gh: set-cmd-text :open https://github.com/search?q=
         yt: set-cmd-text :open https://www.youtube.com/results?search_query=
   content.notifications.enabled:
+    https://findanyanswer.com: false
     https://www.reddit.com: false
