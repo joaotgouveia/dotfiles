@@ -25,7 +25,7 @@ alias commit="git commit -m"
 alias push="git push origin main"
 # Git bare repo aliases for dotfiles repo
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
-alias confpush="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME push git@github.com:joaotgouveia/dotfiles.git"
+alias confpush="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME push origin main"
 # Copying to clipboard
 alias cpc="xclip -sel c < "
 
