@@ -9,9 +9,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Neofetch and fortune
+# Neofetch 
 neofetch
-$(shuf -n 1 -e fortune bullshit) | cowsay -f $(ls /usr/share/cows/*.cow | shuf -n 1)
 
 # Aliases
 alias clear="clear;neofetch"
@@ -20,6 +19,7 @@ alias restart="shutdown -r now"
 alias mv="mv -v"
 alias rm="rm -I"
 # Git aliases
+alias status="git status"
 alias add="git add"
 alias commit="git commit -m"
 alias push="git push origin main"
