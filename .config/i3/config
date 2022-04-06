@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font for window titles
-font pango:ttf-inconsolata-g 11
+font pango:JetBrainsMono 11
 
 # No borders
 default_border none
@@ -17,33 +17,12 @@ client.unfocused #222222  #222222 #888888 #222222 #222222
 # Window title align
 title_align center
 
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
-# Restoring wallpaper
-exec --no-startup-id nitrogen --restore
-
-# Compositor
-exec_always --no-startup-id picom
-
 # Hiding mouse cursor when not used
 exec_always --no-startup-id unclutter
 
 # Binds
 exec --no-startup-id setxkbmap -option caps:escape
 exec --no-startup-id xset r rate 300 50
-
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -58,7 +37,7 @@ bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/launcher_colorful
 bindsym $mod+Shift+f exec --no-startup-id qutebrowser
 
 # Lock screen
-bindsym $mod+Shift+e exec --no-startup-id betterlockscreen -l
+bindsym $mod+Shift+e exec --no-startup-id betterlockscreen -l --time-format %H:%M
 
 # change focus
 bindsym $mod+h focus left
