@@ -24,6 +24,5 @@ alias startssh="eval $(ssh-agent -s)"
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 # Copying to clipboard
 alias cpc="xclip -sel c < "
-
-# Reading markdown files
-mkdwn() { pandoc "$1" | lynx -stdin; }
+# School aliases
+alias iaed="gcc -Wall -Wextra -Werror -ansi -pedantic"
