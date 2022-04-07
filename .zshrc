@@ -14,15 +14,10 @@ neofetch
 
 # Aliases
 alias clear="clear;neofetch"
-alias shutdown="shutdown now"
-alias restart="shutdown -r now"
+alias shutdown="sudo shutdown now"
+alias reboot="sudo reboot"
 alias mv="mv -v"
 alias rm="rm -I"
-# Git aliases
-alias status="git status"
-alias add="git add"
-alias commit="git commit -m"
-alias push="git push origin main"
 # Git bare repo aliases for dotfiles repo
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 alias confpush="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME push origin main"
