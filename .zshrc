@@ -25,5 +25,5 @@ alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 # Copying to clipboard
 alias cpc="xclip -sel c < "
 
-# Enabling vi mode
-bindkey -v
+# Reading markdown files
+mkdwn() { pandoc "$1" | lynx -stdin; }
