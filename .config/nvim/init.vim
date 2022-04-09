@@ -16,6 +16,13 @@ let mapleader = " "
 map ç $
 map s 0
 
+" Remapping undo to t
+map t u
+
+" Remapping paragraph jumps to u and i
+map u }
+map i {
+
 " Toggle spell-check
 map <leader>o :setlocal spell! spelllang=en_us<CR>
 
