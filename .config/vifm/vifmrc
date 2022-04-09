@@ -1,6 +1,4 @@
-" Neovim as default editor
-set vicmd=nvim
-
+" Basics
 set syscalls
 set trash
 set history=100
@@ -9,7 +7,6 @@ set sortnumbers
 set undolevels=100
 set vimhelp
 set norunexec
-colorscheme dracula
 set timefmt="%H:%M, %d-%m"
 set wildmenu
 set wildstyle=popup
@@ -25,6 +22,12 @@ endif
 set statusline=	"%A %10u:%-7g %15s %20d"
 mark b ~/bin/
 mark h ~/
+
+" Neovim as default editor
+set vicmd=nvim
+
+" Always open with just one pane
+only
 
 " :com[mand][!] command_name action
 " The following macros can be used in a command
