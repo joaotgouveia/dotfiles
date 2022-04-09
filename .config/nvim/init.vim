@@ -1,4 +1,4 @@
-"	Basics
+" Basics
 set encoding=utf-8
 set tabstop=4
 set softtabstop=4
@@ -11,20 +11,31 @@ set termguicolors
 filetype plugin on
 syntax on
 let mapleader = " "
-"	Remapping ç to go to the end of a line
+
+" Remapping ç to go to the end of a line and s to beggining
 map ç $
-"	Toggle spell-check
+map s 0
+
+" Toggle spell-check
 map <leader>o :setlocal spell! spelllang=en_us<CR>
-"	Searching for <++> in a doc, used in snippets
-inoremap <space><space> <esc>/<++><enter>:<esc>c4l
-"	Auto-pairs
+
+" Splits open at the bottom and right
+set splitbelow splitright
+
+" Split navigation shortcuts
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Auto-pairs
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap { {}<left>
 inoremap [ []<left>
 
-"	Plugins
+" Plugins
 call plug#begin('~/.config/nvim/plugged')
 	" Lightline status line
 	Plug 'itchyny/lightline.vim'
@@ -37,11 +48,12 @@ call plug#begin('~/.config/nvim/plugged')
 	"	Vimwiki
 	Plug 'vimwiki/vimwiki'
 call plug#end()
-"	Initializing theme
+
+" Initializing theme
 colorscheme base16-dracula
 let g:lightline = { 'colorscheme': 'solarized' }
 
-"	Enabling treesitter highlighting
+" Enabling treesitter highlighting
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
@@ -51,11 +63,14 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-"	Setting vimwiki default language to markdown
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+" Setting vimwiki default language to markdown
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
-"	Bash snippets
+" Searching for <++> in a doc, used in snippets
+inoremap <space><space> <esc>/<++><enter>:<esc>c4l
+
+" Snippets
+" Bash
 " Shebang
 autocmd FileType sh inoremap >h #!/bin/bash
 " If
@@ -63,7 +78,7 @@ autocmd FileType sh inoremap >i if<space>[<space><++><space>]<enter>then<enter><
 " For
 autocmd FileType sh inoremap >c for<space><++><space>in<space><++><enter>do<enter><++><enter>done
 
-"	C snippets
+" C
 " Standard headers
 autocmd FileType c inoremap >h #include<stdio.h><enter>#include<stdlib.h><enter><enter>
 " Main
