@@ -10,6 +10,7 @@ set cursorline
 set termguicolors
 filetype plugin on
 syntax on
+let mapleader = " "
 "	Remapping ç to go to the end of a line
 nnoremap ç $
 nnoremap cç c$
@@ -33,6 +34,8 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'ap/vim-css-color'
 	" Parser and better syntax highlighting
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	"	Vimwiki
+	Plug 'vimwiki/vimwiki'
 call plug#end()
 
 "	Initializing theme
@@ -48,6 +51,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+"	Setting vimwiki default language to markdown
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 "	Bash snippets
 " Shebang
