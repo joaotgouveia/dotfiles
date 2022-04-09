@@ -12,17 +12,17 @@ filetype plugin on
 syntax on
 let mapleader = " "
 "	Remapping ç to go to the end of a line
-nnoremap ç $
-nnoremap cç c$
-nnoremap dç d$
+map ç $
+"	Toggle spell-check
+map <leader>o :setlocal spell! spelllang=en_us<CR>
 "	Searching for <++> in a doc, used in snippets
-inoremap <Space><Space> <Esc>/<++><Enter>:<Esc>c4l
+inoremap <space><space> <esc>/<++><enter>:<esc>c4l
 "	Auto-pairs
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap ( ()<Left>
-inoremap { {}<Left>
-inoremap [ []<Left>
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap [ []<left>
 
 "	Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -37,7 +37,6 @@ call plug#begin('~/.config/nvim/plugged')
 	"	Vimwiki
 	Plug 'vimwiki/vimwiki'
 call plug#end()
-
 "	Initializing theme
 colorscheme base16-dracula
 let g:lightline = { 'colorscheme': 'solarized' }
@@ -60,29 +59,29 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 " Shebang
 autocmd FileType sh inoremap >h #!/bin/bash
 " If
-autocmd FileType sh inoremap >i if<Space>[<Space><++><Space>]<Enter>then<Enter><++><Enter>fi
+autocmd FileType sh inoremap >i if<space>[<space><++><space>]<enter>then<enter><++><enter>fi
 " For
-autocmd FileType sh inoremap >c for<Space><++><Space>in<Space><++><Enter>do<Enter><++><Enter>done
+autocmd FileType sh inoremap >c for<space><++><space>in<space><++><enter>do<enter><++><enter>done
 
 "	C snippets
 " Standard headers
-autocmd FileType c inoremap >h #include<stdio.h><Enter>#include<stdlib.h><Enter><Enter>
+autocmd FileType c inoremap >h #include<stdio.h><enter>#include<stdlib.h><enter><enter>
 " Main
-autocmd FileType c inoremap >m int<Space>main<Space>()<Space>{<Enter><++><Enter><Backspace>return<Space>0;<Enter>}
+autocmd FileType c inoremap >m int<space>main<space>()<space>{<enter><++><enter><backspace>return<space>0;<enter>}
 " Functions
-autocmd FileType c inoremap >f <++><Space><++>(<++>)<Space>{<Enter><++><Enter>}
+autocmd FileType c inoremap >f <++><space><++>(<++>)<space>{<enter><++><enter>}
 " If
-autocmd FileType c inoremap >i if<Space>(<++>)<Space>{<Enter><++><Enter>}
+autocmd FileType c inoremap >i if<space>(<++>)<space>{<enter><++><enter>}
 " Else
-autocmd FileType c inoremap >e else<Space>{<Enter><++><Enter>}
+autocmd FileType c inoremap >e else<space>{<enter><++><enter>}
 " While
-autocmd FileType c inoremap >w while<Space>(<++>)<Space>{<Enter><++><Enter>}
+autocmd FileType c inoremap >w while<space>(<++>)<space>{<enter><++><enter>}
 " For
-autocmd FileType c inoremap >c for<Space>(<++>;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}
+autocmd FileType c inoremap >c for<space>(<++>;<space><++>;<space><++>)<space>{<enter><++><enter>}
 " Structs
-autocmd FileType c inoremap >s struct<Space><++><Space>{<Enter><++><Enter>};
+autocmd FileType c inoremap >s struct<space><++><space>{<enter><++><enter>};
 " Switch case
-autocmd FileType c inoremap >t switch<Space>(<++>)<Space>{<Enter>case<Space><++>:<Enter><++><Enter>}
+autocmd FileType c inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}
 " Remapping tag jumping
 autocmd FileType c nnoremap X <C-]>
 " Create tags file for tag jumping and autocomplete
