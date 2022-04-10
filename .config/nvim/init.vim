@@ -17,7 +17,7 @@ map ç $
 map s 0
 
 " Remapping undo to t
-map t u
+noremap t u
 
 " Remapping paragraph jumps to u and i
 map u }
@@ -48,6 +48,8 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
 	" Theme
 	Plug 'RRethy/nvim-base16'
+	" Icons
+	"Plug 'ryanoasis/vim-devicons'
 	" Css colors
 	Plug 'ap/vim-css-color'
 	" Parser and better syntax highlighting
@@ -57,8 +59,8 @@ call plug#begin('~/.config/nvim/plugged')
 call plug#end()
 
 " Initializing theme
-colorscheme base16-dracula
-let g:lightline = { 'colorscheme': 'solarized' }
+colorscheme base16-material-palenight
+let g:lightline = { 'colorscheme': 'wombat' }
 
 " Enabling treesitter highlighting
 lua << EOF
