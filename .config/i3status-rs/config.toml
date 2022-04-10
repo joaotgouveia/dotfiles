@@ -4,9 +4,6 @@ name = "space-villain"
 good_bg = "#631261"
 idle_bg = "#194b92"
 
-[icons]
-name = "awesome5"
-
 [[block]]
 block = "net"
 device = "wlp0s20f3"
