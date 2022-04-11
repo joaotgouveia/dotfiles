@@ -138,6 +138,7 @@ bindsym $mod+r mode "resize"
 
 # Start i3status-rust bar
 bar {
+	font pango:JetBrainsMono, Font Awesome 6 Free
 	position top
 	status_command /usr/bin/i3status-rs .config/i3status-rs/config.toml
 	workspace_buttons no
