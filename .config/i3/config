@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font for window titles
-font pango:JetBrainsMono 11
+font pango:Hack 11
 
 # No borders
 default_border none
@@ -138,7 +138,7 @@ bindsym $mod+r mode "resize"
 
 # Start i3status-rust bar
 bar {
-	font pango:JetBrainsMono, Font Awesome 6 Free
+	font pango:Hack, Font Awesome 6 Free
 	position top
 	status_command /usr/bin/i3status-rs .config/i3status-rs/config.toml
 	workspace_buttons no
