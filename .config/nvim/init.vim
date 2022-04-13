@@ -76,36 +76,36 @@ EOF
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " Searching for <++> in a doc, used in snippets
-inoremap <space><space> <esc>/<++><enter>:<esc>c4l
+imap <space><space> <esc>/<++><enter>:<esc>c4l
 
 " Snippets
 " Bash
 " Shebang
 autocmd FileType sh inoremap >h #!/bin/bash
 " If
-autocmd FileType sh inoremap >i if<space>[<space><++><space>]<enter>then<enter><++><enter>fi
+autocmd FileType sh inoremap >i if<space>[<space><++><space>]<enter>then<enter><++><enter>fi<space><space>
 " For
-autocmd FileType sh inoremap >c for<space><++><space>in<space><++><enter>do<enter><++><enter>done
+autocmd FileType sh inoremap >c for<space><++><space>in<space><++><enter>do<enter><++><enter>done<space><space>
 
 " C
 " Standard headers
 autocmd FileType c inoremap >h #include<stdio.h><enter>#include<stdlib.h><enter><enter>
 " Main
-autocmd FileType c inoremap >m int<space>main<space>()<space>{<enter><++><enter><backspace>return<space>0;<enter>}
+autocmd FileType c inoremap >m int<space>main<space>()<space>{<enter><++><enter><backspace>return<space>0;<enter>}<space><space>
 " Functions
-autocmd FileType c inoremap >f <++><space><++>(<++>)<space>{<enter><++><enter>}
+autocmd FileType c inoremap >f <++><space><++>(<++>)<space>{<enter><++><enter>}<space><space>
 " If
-autocmd FileType c inoremap >i if<space>(<++>)<space>{<enter><++><enter>}
+autocmd FileType c inoremap >i if<space>(<++>)<space>{<enter><++><enter>}<space><space>
 " Else
-autocmd FileType c inoremap >e else<space>{<enter><++><enter>}
+autocmd FileType c inoremap >e else<space>{<enter><++><enter>}<space><space>
 " While
-autocmd FileType c inoremap >w while<space>(<++>)<space>{<enter><++><enter>}
+autocmd FileType c inoremap >w while<space>(<++>)<space>{<enter><++><enter>}<space><space>
 " For
-autocmd FileType c inoremap >c for<space>(<++>;<space><++>;<space><++>)<space>{<enter><++><enter>}
+autocmd FileType c inoremap >c for<space>(<++>;<space><++>;<space><++>)<space>{<enter><++><enter>}<space><space>
 " Structs
-autocmd FileType c inoremap >s struct<space><++><space>{<enter><++><enter>};
+autocmd FileType c inoremap >s struct<space><++><space>{<enter><++><enter>};<space><space>
 " Switch case
-autocmd FileType c inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}
+autocmd FileType c inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}<space><space>
 " Remapping tag jumping
 autocmd FileType c nnoremap X <C-]>
 " Create tags file for tag jumping and autocomplete
