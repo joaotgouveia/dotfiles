@@ -76,7 +76,7 @@ EOF
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " Searching for <++> in a doc, used in snippets
-imap <space><space> <esc>/<++><enter>:<esc>c4l
+inoremap <space><space> <esc>/<++><enter>:<esc>c4l
 
 " Snippets
 " Bash
