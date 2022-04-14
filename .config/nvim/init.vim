@@ -83,29 +83,29 @@ inoremap <space><space> <esc>/<++><enter>:<esc>c4l
 " Shebang
 autocmd FileType sh inoremap >h #!/bin/bash
 " If
-autocmd FileType sh inoremap >i if<space>[<space><++><space>]<enter>then<enter><++><enter>fi<space><space>
+autocmd FileType sh inoremap >i if<space>[<space><++><space>]<enter>then<enter><++><enter>fi
 " For
-autocmd FileType sh inoremap >c for<space><++><space>in<space><++><enter>do<enter><++><enter>done<space><space>
+autocmd FileType sh inoremap >c for<space><++><space>in<space><++><enter>do<enter><++><enter>done
 
 " C
 " Standard headers
 autocmd FileType c inoremap >h #include<stdio.h><enter>#include<stdlib.h><enter><enter>
 " Main
-autocmd FileType c inoremap >m int<space>main<space>()<space>{<enter><++><enter><backspace>return<space>0;<enter>}<space><space>
+autocmd FileType c inoremap >m int<space>main<space>()<space>{<enter><++><enter><backspace>return<space>0;<enter>}
 " Functions
-autocmd FileType c inoremap >f <++><space><++>(<++>)<space>{<enter><++><enter>}<space><space>
+autocmd FileType c inoremap >f <++><space><++>(<++>)<space>{<enter><++><enter>}
 " If
-autocmd FileType c inoremap >i if<space>(<++>)<space>{<enter><++><enter>}<space><space>
+autocmd FileType c inoremap >i if<space>(<++>)<space>{<enter><++><enter>}
 " Else
-autocmd FileType c inoremap >e else<space>{<enter><++><enter>}<space><space>
+autocmd FileType c inoremap >e else<space>{<enter><++><enter>}
 " While
-autocmd FileType c inoremap >w while<space>(<++>)<space>{<enter><++><enter>}<space><space>
+autocmd FileType c inoremap >w while<space>(<++>)<space>{<enter><++><enter>}
 " For
-autocmd FileType c inoremap >c for<space>(<++>;<space><++>;<space><++>)<space>{<enter><++><enter>}<space><space>
+autocmd FileType c inoremap >c for<space>(<++>;<space><++>;<space><++>)<space>{<enter><++><enter>}
 " Structs
-autocmd FileType c inoremap >s struct<space><++><space>{<enter><++><enter>};<space><space>
+autocmd FileType c inoremap >s struct<space><++><space>{<enter><++><enter>};
 " Switch case
-autocmd FileType c inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}<space><space>
+autocmd FileType c inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}
 " Remapping tag jumping
 autocmd FileType c nnoremap X <C-]>
 " Create tags file for tag jumping and autocomplete
