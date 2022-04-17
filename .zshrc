@@ -18,8 +18,7 @@ alias shutdown="sudo shutdown now"
 alias reboot="sudo reboot"
 alias mv="mv -v"
 alias rm="rm -I"
-# Start SSH
-alias startssh="eval $(ssh-agent -s)"
+alias reset="reset;neofetch"
 # Git bare repo alias for dotfiles repo
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 # Copying to clipboard
