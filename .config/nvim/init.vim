@@ -8,9 +8,14 @@ set noshowmode
 set number relativenumber
 set cursorline
 set termguicolors
+set ignorecase
+set smartcase
 filetype plugin on
 syntax on
 let mapleader = " "
+
+" Visual mode bind is v-block
+noremap v <C-v>
 
 " Remapping ç to go to the end of a line and s to beggining
 map ç $
@@ -48,8 +53,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
 	" Theme
 	Plug 'RRethy/nvim-base16'
-	" Icons
-	"Plug 'ryanoasis/vim-devicons'
 	" Css colors
 	Plug 'ap/vim-css-color'
 	" Parser and better syntax highlighting
