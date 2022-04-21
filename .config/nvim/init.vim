@@ -21,6 +21,10 @@ noremap v <C-v>
 map ç $
 map s 0
 
+" Making the maps for J and K make sense
+map J L
+map K H
+
 " Remapping undo to t
 noremap t u
 
