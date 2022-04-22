@@ -10,14 +10,27 @@ set cursorline
 set termguicolors
 set ignorecase
 set smartcase
+set clipboard+=unnamedplus
 filetype plugin on
 syntax on
 let mapleader = " "
 
+" Centering doc after entering insert mode
+autocmd InsertEnter * norm zz
+
+" Remove trailling whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
+" Remapping tag jumping
+nnoremap X <C-]>
+
+" Remapping auto-completion
+inoremap <space><CR> <C-n>
+
 " Visual mode bind is v-block
 noremap v <C-v>
 
-" Remapping ç to go to the end of a line and s to beggining
+" Remapping ç to go to the end of a line and s to beginning
 map ç $
 map s 0
 
@@ -35,6 +48,10 @@ map i {
 " Toggle spell-check
 map <leader>o :setlocal spell! spelllang=en_us<CR>
 
+" Enable and disable auto comments
+map <leader>c :setlocal formatoptions-=cro<CR>
+map <leader>C :setlocal formatoptions=cro<CR>
+
 " Splits open at the bottom and right
 set splitbelow splitright
 
@@ -43,6 +60,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Split opening shortcuts
+noremap <leader>h :split<space>
+noremap <leader>v :vsplit<space>
 
 " Auto-pairs
 inoremap " ""<left>
@@ -61,7 +82,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'ap/vim-css-color'
 	" Parser and better syntax highlighting
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-	"	Vimwiki
+	" Vimwiki
 	Plug 'vimwiki/vimwiki'
 call plug#end()
 
@@ -113,7 +134,5 @@ autocmd FileType c inoremap >c for<space>(<++>;<space><++>;<space><++>)<space>{<
 autocmd FileType c inoremap >s struct<space><++><space>{<enter><++><enter>};
 " Switch case
 autocmd FileType c inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}
-" Remapping tag jumping
-autocmd FileType c nnoremap X <C-]>
 " Create tags file for tag jumping and autocomplete
 autocmd! VimLeave *.c !ctags -R .
