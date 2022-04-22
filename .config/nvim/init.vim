@@ -25,7 +25,7 @@ autocmd BufWritePre * %s/\s\+$//e
 nnoremap X <C-]>
 
 " Remapping auto-completion
-inoremap <space><CR> <C-n>
+inoremap <leader><CR> <C-n>
 
 " Visual mode bind is v-block
 noremap v <C-v>
@@ -104,7 +104,7 @@ EOF
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " Searching for <++> in a doc, used in snippets
-inoremap <space><space> <esc>/<++><enter>:<esc>c4l
+inoremap <leader><leader> <esc>/<++><enter>:<esc>c4l
 
 " Snippets
 " Bash
