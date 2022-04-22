@@ -20,21 +20,17 @@ title_align center
 # Hiding mouse cursor when not used
 exec_always --no-startup-id unclutter
 
-# Binds
-exec --no-startup-id setxkbmap -option caps:escape
-exec --no-startup-id xset r rate 300 50
-
-# start a terminal
+# Launch a terminal
 bindsym $mod+Return exec alacritty
 
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+q kill
 
-# open browser
+# Launch browser
 bindsym $mod+Shift+f exec --no-startup-id qutebrowser
-# open discord
+# Launch discord
 bindsym $mod+Shift+d exec --no-startup-id discord
-# open spotify
+# Launch spotify
 bindsym $mod+Shift+s exec --no-startup-id spotify
 
 # Lock screen
