@@ -71,6 +71,7 @@ inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap { {}<left>
 inoremap [ []<left>
+inoremap ` ``<left>
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
