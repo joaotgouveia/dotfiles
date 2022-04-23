@@ -1,14 +1,32 @@
 [theme]
 name = "space-villain"
-[theme.overrides]
-good_bg = "#631261"
-idle_bg = "#194b92"
 
 [icons]
 name = "awesome6"
+
+[[block]]
+block = "music"
+max_width = 50
+dynamic_width = true
+format = "{title} by {artist} "
+marquee_interval = 0
+on_click = "spotify"
+on_collapsed_click = "spotify"
+[block.theme_overrides]
+info_bg = "#194b92"
+idle_bg = "#194b92"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{utilization} @ {frequency}"
+[block.theme_overrides]
+idle_bg = "#631261"
 
 [[block]]
 block = "time"
 format = "%H:%M, %d %b"
 timezone = "Europe/Lisbon"
 interval = 60
+[block.theme_overrides]
+idle_bg = "#194b92"
