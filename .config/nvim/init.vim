@@ -8,13 +8,35 @@ set noshowmode
 set number relativenumber
 set cursorline
 set termguicolors
+set ignorecase
+set smartcase
+set clipboard+=unnamedplus
 filetype plugin on
 syntax on
 let mapleader = " "
 
-" Remapping ç to go to the end of a line and s to beggining
+" Centering doc after entering insert mode
+autocmd InsertEnter * norm zz
+
+" Remove trailling whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
+" Remapping tag jumping
+nnoremap X <C-]>
+
+" Remapping auto-completion
+inoremap <leader><CR> <C-n>
+
+" Visual mode bind is v-block
+noremap v <C-v>
+
+" Remapping ç to go to the end of a line and s to beginning
 map ç $
 map s 0
+
+" Making the maps for J and K make sense
+map J L
+map K H
 
 " Remapping undo to t
 noremap t u
@@ -26,6 +48,10 @@ map i {
 " Toggle spell-check
 map <leader>o :setlocal spell! spelllang=en_us<CR>
 
+" Enable and disable auto comments
+map <leader>c :setlocal formatoptions-=cro<CR>
+map <leader>C :setlocal formatoptions=cro<CR>
+
 " Splits open at the bottom and right
 set splitbelow splitright
 
@@ -35,12 +61,17 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Split opening shortcuts
+noremap <leader>h :split<space>
+noremap <leader>v :vsplit<space>
+
 " Auto-pairs
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap { {}<left>
 inoremap [ []<left>
+inoremap ` ``<left>
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -48,13 +79,11 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
 	" Theme
 	Plug 'RRethy/nvim-base16'
-	" Icons
-	"Plug 'ryanoasis/vim-devicons'
 	" Css colors
 	Plug 'ap/vim-css-color'
 	" Parser and better syntax highlighting
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-	"	Vimwiki
+	" Vimwiki
 	Plug 'vimwiki/vimwiki'
 call plug#end()
 
@@ -76,7 +105,7 @@ EOF
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " Searching for <++> in a doc, used in snippets
-inoremap <space><space> <esc>/<++><enter>:<esc>c4l
+inoremap <leader><leader> <esc>/<++><enter>:<esc>c4l
 
 " Snippets
 " Bash
@@ -106,7 +135,5 @@ autocmd FileType c inoremap >c for<space>(<++>;<space><++>;<space><++>)<space>{<
 autocmd FileType c inoremap >s struct<space><++><space>{<enter><++><enter>};
 " Switch case
 autocmd FileType c inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}
-" Remapping tag jumping
-autocmd FileType c nnoremap X <C-]>
 " Create tags file for tag jumping and autocomplete
 autocmd! VimLeave *.c !ctags -R .
