@@ -106,12 +106,12 @@ map <leader>ph :GitGutterPrevHunk<CR>
 " Initializing theme
 colorscheme base16-material-palenight
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'right': [ [ 'filetype' ],
-      \              [ 'fileencoding' ] ]
-      \ },
-      \ }
+	\ 'colorscheme': 'wombat',
+	\ 'active': {
+	\	'left': [ [ 'mode' ], [ 'filename' ] ],
+	\	'right': [ [ 'filetype' ], [ 'fileencoding' ] ]
+	\ },
+	\ }
 " Enabling treesitter highlighting
 lua << EOF
 require'nvim-treesitter.configs'.setup {
