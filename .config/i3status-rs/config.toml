@@ -11,8 +11,17 @@ max_width = 25
 dynamic_width = true
 format = "{title} by {artist} "
 marquee_interval = 0
+marquee_speed = 0.3
 on_click = "spotify"
 on_collapsed_click = "spotify"
+[block.theme_overrides]
+info_bg = "#631261"
+idle_bg = "#631261"
+
+[[block]]
+block = "sound"
+device = "hw:2,0"
+format = "{volume}"
 [block.theme_overrides]
 info_bg = "#194b92"
 idle_bg = "#194b92"
