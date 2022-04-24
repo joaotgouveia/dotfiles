@@ -5,6 +5,8 @@ set softtabstop=4
 set shiftwidth=4
 set nohlsearch
 set noshowmode
+set noshowcmd
+set noruler
 set number relativenumber
 set cursorline
 set termguicolors
@@ -20,6 +22,9 @@ autocmd InsertEnter * norm zz
 
 " Remove trailling whitespace
 autocmd BufWritePre * %s/\s\+$//e
+
+" Auto commenting disabled by default
+autocmd FileType * setlocal formatoptions-=cro
 
 " Remapping tag jumping
 nnoremap X <C-]>
@@ -62,7 +67,6 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Split opening shortcuts
-noremap <leader>h :split<space>
 noremap <leader>v :vsplit<space>
 
 " Auto-pairs
@@ -85,12 +89,29 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	" Vimwiki
 	Plug 'vimwiki/vimwiki'
+	" Surround manipulation
+	Plug 'tpope/vim-surround'
+	" Comment manipulation
+	Plug 'tpope/vim-commentary'
+	" Git integration
+	Plug 'airblade/vim-gitgutter'
 call plug#end()
+
+" Gitgutter settings
+noremap <leader>g :GitGutterSignsToggle<CR>
+" Cycle hunks
+map <leader>nh :GitGutterNextHunk<CR>
+map <leader>ph :GitGutterPrevHunk<CR>
 
 " Initializing theme
 colorscheme base16-material-palenight
-let g:lightline = { 'colorscheme': 'wombat' }
-
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'right': [ [ 'filetype' ],
+      \              [ 'fileencoding' ] ]
+      \ },
+      \ }
 " Enabling treesitter highlighting
 lua << EOF
 require'nvim-treesitter.configs'.setup {
