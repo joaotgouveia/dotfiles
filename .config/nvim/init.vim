@@ -35,9 +35,9 @@ inoremap <leader><CR> <C-n>
 " Visual mode bind is v-block
 noremap v <C-v>
 
-" Remapping ç to go to the end of a line and s to beginning
-map ç $
-map s 0
+" Remapping L to go to the end of a line and H to beginning
+map L $
+map H 0
 
 " Making the maps for J and K make sense
 noremap J L
@@ -57,10 +57,10 @@ map <leader>o :setlocal spell! spelllang=en_us<CR>
 set splitbelow splitright
 
 " Split navigation shortcuts
-map H <C-w>h
+map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
-map L <C-w>l
+map <C-l> <C-w>l
 
 " Split opening shortcuts
 noremap <leader>v :vsplit<space>
@@ -87,8 +87,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'vimwiki/vimwiki'
 	" Surround manipulation
 	Plug 'tpope/vim-surround'
-	" Comment manipulation
-	Plug 'tpope/vim-commentary'
 	" Git integration
 	Plug 'airblade/vim-gitgutter'
 call plug#end()
