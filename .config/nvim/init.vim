@@ -87,8 +87,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'vimwiki/vimwiki'
 	" Surround manipulation
 	Plug 'tpope/vim-surround'
-	" Comment manipulation
-	Plug 'tpope/vim-commentary'
 	" Git integration
 	Plug 'airblade/vim-gitgutter'
 call plug#end()
