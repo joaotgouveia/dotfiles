@@ -37,7 +37,7 @@ noremap v <C-v>
 
 " Remapping L to go to the end of a line and H to beginning
 map L $
-map S 0
+map H 0
 
 " Making the maps for J and K make sense
 noremap J L
