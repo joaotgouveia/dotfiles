@@ -96,16 +96,16 @@ call plug#end()
 " Gitgutter settings
 nmap <leader>hn <Plug>(GitGutterNextHunk)
 nmap <leader>hp <Plug>(GitGutterPrevHunk)
-let g:gitgutter_enable = 1
+let g:gitgutter_enabled = 1
 let g:gitgutter_map_keys = 0
 
 " Initializing theme
 colorscheme base16-material-palenight
 let g:lightline = {
-	\ 'colorscheme': 'wombat'
+	\ 'colorscheme': 'wombat',
 	\ 'active': {
 	\	'left': [ [ 'mode' ], [ 'filename' ] ],
-	\	'right': [ [ 'filetype' ], [ 'fileenconding' ] ]
+	\	'right': [ [ 'filetype' ], [ 'fileencoding' ] ]
 	\ },
 	\ }
 
