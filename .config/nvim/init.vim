@@ -107,7 +107,7 @@ let g:lightline = {
 	\ },
 	\ }
 
-" Enabling treesitter highlighting
+" Enabling treesitter highlighting and folding
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
@@ -116,6 +116,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+set foldnestmax=1
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+nmap <CR> zc
 
 " Setting vimwiki default language to markdown
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
