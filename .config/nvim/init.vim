@@ -5,6 +5,8 @@ set softtabstop=4
 set shiftwidth=4
 set nohlsearch
 set noshowmode
+set noshowcmd
+set noruler
 set number relativenumber
 set cursorline
 set termguicolors
@@ -21,6 +23,9 @@ autocmd InsertEnter * norm zz
 " Remove trailling whitespace
 autocmd BufWritePre * %s/\s\+$//e
 
+" Auto commenting disabled by default
+autocmd FileType * setlocal formatoptions-=cro
+
 " Remapping tag jumping
 nnoremap X <C-]>
 
@@ -35,8 +40,8 @@ map ç $
 map s 0
 
 " Making the maps for J and K make sense
-map J L
-map K H
+noremap J L
+noremap K H
 
 " Remapping undo to t
 noremap t u
@@ -48,21 +53,16 @@ map i {
 " Toggle spell-check
 map <leader>o :setlocal spell! spelllang=en_us<CR>
 
-" Enable and disable auto comments
-map <leader>c :setlocal formatoptions-=cro<CR>
-map <leader>C :setlocal formatoptions=cro<CR>
-
 " Splits open at the bottom and right
 set splitbelow splitright
 
 " Split navigation shortcuts
-map <C-h> <C-w>h
+map H <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
-map <C-l> <C-w>l
+map L <C-w>l
 
 " Split opening shortcuts
-noremap <leader>h :split<space>
 noremap <leader>v :vsplit<space>
 
 " Auto-pairs
@@ -85,11 +85,29 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	" Vimwiki
 	Plug 'vimwiki/vimwiki'
+	" Surround manipulation
+	Plug 'tpope/vim-surround'
+	" Comment manipulation
+	Plug 'tpope/vim-commentary'
+	" Git integration
+	Plug 'airblade/vim-gitgutter'
 call plug#end()
+
+" Gitgutter settings
+nmap <leader>hn <Plug>(GitGutterNextHunk)
+nmap <leader>hp <Plug>(GitGutterPrevHunk)
+let g:gitgutter_enable = 1
+let g:gitgutter_map_keys = 0
 
 " Initializing theme
 colorscheme base16-material-palenight
-let g:lightline = { 'colorscheme': 'wombat' }
+let g:lightline = {
+	\ 'colorscheme': 'wombat'
+	\ 'active': {
+	\	'left': [ [ 'mode' ], [ 'filename' ] ],
+	\	'right': [ [ 'filetype' ], [ 'fileenconding' ] ]
+	\ },
+	\ }
 
 " Enabling treesitter highlighting
 lua << EOF
