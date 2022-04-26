@@ -1,5 +1,5 @@
 [theme]
-name = "space-villain"
+name = "modern"
 
 [icons]
 name = "awesome6"
@@ -15,23 +15,28 @@ marquee_speed = 0.3
 on_click = "spotify"
 on_collapsed_click = "spotify"
 [block.theme_overrides]
-info_bg = "#631261"
-idle_bg = "#631261"
+info_bg = "#fc6655"
+idle_bg = "#fc6655"
+info_fg = "#282a36"
+idle_fg = "#282a36"
 
 [[block]]
 block = "sound"
 device = "hw:2,0"
 format = "{volume}"
 [block.theme_overrides]
-info_bg = "#194b92"
-idle_bg = "#194b92"
+info_bg = "#ebcb8b"
+idle_bg = "#ebcb8b"
+info_fg = "#282a36"
+idle_fg = "#282a36"
 
 [[block]]
 block = "cpu"
 interval = 1
 format = "{utilization}"
 [block.theme_overrides]
-idle_bg = "#631261"
+idle_bg = "#fc6655"
+idle_fg = "#282a36"
 
 [[block]]
 block = "nvidia_gpu"
@@ -39,14 +44,16 @@ label = "RTX 3060"
 show_temperature = false
 show_memory = false
 [block.theme_overrides]
-idle_bg = "#194b92"
+idle_bg = "#ebcb8b"
+idle_fg = "#282a36"
 
 [[block]]
 block = "speedtest"
 interval = 1800
 format = "{ping}{speed_down}"
 [block.theme_overrides]
-idle_bg = "#631261"
+idle_bg = "#fc6655"
+idle_fg = "#282a36"
 
 [[block]]
 block = "time"
@@ -54,4 +61,5 @@ format = "%H:%M, %d %b"
 timezone = "Europe/Lisbon"
 interval = 60
 [block.theme_overrides]
-idle_bg = "#194b92"
+idle_bg = "#ebcb8b"
+idle_fg = "#282a36"

@@ -11,7 +11,7 @@ default_border none
 workspace_layout tabbed
 
 # Window label color
-client.focused  #194b92 #194b92 #ffffff #194b92 #194b92
+client.focused  #fc6655 #fc6655 #282a36 #fc6655 #fc6655
 client.unfocused #222222  #222222 #888888 #222222 #222222
 
 # Window title align
@@ -148,6 +148,6 @@ bar {
 	workspace_buttons no
 	tray_output none
 	colors {
-		background #021d3b
+		background #282c36
 	}
 }
