@@ -9,17 +9,13 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Neofetch 
+# Neofetch
 neofetch
 
 # General aliases
 alias clear="clear;neofetch"
-alias shutdown="sudo shutdown now"
-alias reboot="sudo reboot"
 alias mv="mv -v"
 alias rm="rm -I"
-# MPV aliases
-alias mpvyt="mpv --ytdl-format=bestvideo+bestaudio/best"
 # Git bare repo alias for dotfiles repo
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 # Copying to clipboard
