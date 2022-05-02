@@ -32,6 +32,8 @@ bindsym $mod+Shift+f exec --no-startup-id qutebrowser
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run -h 25 -z 980
 # Launch spotify
 bindsym $mod+Shift+s exec --no-startup-id spotify
+# Print screen
+bindsym Print exec flameshot gui
 
 # Lock screen
 bindsym $mod+Shift+e exec --no-startup-id betterlockscreen --off 10	 -l --time-format %H:%M
@@ -41,11 +43,9 @@ bindsym $mod+p exec dmenupower
 bindsym $mod+Shift+p exec dmenupower -r
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Media keys for spotify with playerctl
 bindsym XF86AudioPlay exec --no-startup-id playerctl -p spotify play-pause
@@ -153,7 +153,7 @@ bindsym $mod+r mode "resize"
 bar {
 	font pango:Hack, Font Awesome 6 Free
 	position top
-	status_command i3status-rs --never-pause .config/i3status-rs/config.toml
+	status_command i3status-rs .config/i3status-rs/config.toml
 	workspace_buttons no
 	tray_output none
 	colors {
