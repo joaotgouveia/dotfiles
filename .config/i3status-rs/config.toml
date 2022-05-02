@@ -48,18 +48,10 @@ idle_bg = "#ebcb8b"
 idle_fg = "#282a36"
 
 [[block]]
-block = "speedtest"
-interval = 1800
-format = "{ping}{speed_down}"
-[block.theme_overrides]
-idle_bg = "#fc6655"
-idle_fg = "#282a36"
-
-[[block]]
 block = "time"
 format = "%H:%M, %d %b"
 timezone = "Europe/Lisbon"
 interval = 60
 [block.theme_overrides]
-idle_bg = "#ebcb8b"
+idle_bg = "#fc6655"
 idle_fg = "#282a36"
