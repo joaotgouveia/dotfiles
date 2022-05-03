@@ -15,8 +15,8 @@ marquee_speed = 0.3
 on_click = "spotify"
 on_collapsed_click = "spotify"
 [block.theme_overrides]
-info_bg = "#fc6655"
-idle_bg = "#fc6655"
+info_bg = "#c8e690"
+idle_bg = "#c8e690"
 info_fg = "#282a36"
 idle_fg = "#282a36"
 
@@ -25,8 +25,8 @@ block = "sound"
 device = "hw:2,0"
 format = "{volume}"
 [block.theme_overrides]
-info_bg = "#ebcb8b"
-idle_bg = "#ebcb8b"
+idle_bg = "#5ba276"
+info_bg = "#5ba276"
 info_fg = "#282a36"
 idle_fg = "#282a36"
 
@@ -35,7 +35,7 @@ block = "cpu"
 interval = 1
 format = "{utilization}"
 [block.theme_overrides]
-idle_bg = "#fc6655"
+idle_bg = "#c8e690"
 idle_fg = "#282a36"
 
 [[block]]
@@ -44,7 +44,7 @@ label = "RTX 3060"
 show_temperature = false
 show_memory = false
 [block.theme_overrides]
-idle_bg = "#ebcb8b"
+idle_bg = "#5ba276"
 idle_fg = "#282a36"
 
 [[block]]
@@ -53,5 +53,5 @@ format = "%H:%M, %d %b"
 timezone = "Europe/Lisbon"
 interval = 60
 [block.theme_overrides]
-idle_bg = "#fc6655"
+idle_bg = "#c8e690"
 idle_fg = "#282a36"
