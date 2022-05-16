@@ -103,7 +103,7 @@ let g:lightline = {
 	\ 'colorscheme': 'wombat',
 	\ 'active': {
 	\	'left': [ [ 'mode' ], [ 'filename' ] ],
-	\	'right': [ [ 'filetype' ], [ 'fileencoding' ] ]
+	\	'right': [ [ 'filetype' ], [ 'fileencoding' ], [ 'lineinfo' ] ]
 	\ },
 	\ }
 
@@ -147,13 +147,27 @@ autocmd FileType c inoremap >f <++><space><++>(<++>)<space>{<enter><++><enter>}
 autocmd FileType c inoremap >i if<space>(<++>)<space>{<enter><++><enter>}
 " Else
 autocmd FileType c inoremap >e else<space>{<enter><++><enter>}
+" Switch case
+autocmd FileType c inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}
 " While
 autocmd FileType c inoremap >w while<space>(<++>)<space>{<enter><++><enter>}
 " For
 autocmd FileType c inoremap >c for<space>(<++>;<space><++>;<space><++>)<space>{<enter><++><enter>}
 " Structs
 autocmd FileType c inoremap >s struct<space><++><space>{<enter><++><enter>};
-" Switch case
-autocmd FileType c inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}
 " Create tags file for tag jumping and autocomplete
 autocmd! VimLeave *.c !ctags -R .
+
+" Javascript
+" Functions
+autocmd FileType js inoremap >f funtion<space><++>(<++>)<space>{<enter><++><enter>}
+" If
+autocmd FileType js inoremap >i if<space>(<++>)<space>{<enter><++><enter>}
+" Else
+autocmd FileType js inoremap >e else<space>{<enter><++><enter>}
+" Switch case
+autocmd FileType js inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}
+" While
+autocmd FileType js inoremap >w while<space>(<++>)<space>{<enter><++><enter>}
+" For
+autocmd FileType js inoremap >c for<space>(<++>;<space><++>;<space><++>)<space>{<enter><++><enter>}
