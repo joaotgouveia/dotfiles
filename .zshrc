@@ -23,4 +23,4 @@ alias cpc="xclip -sel c < "
 # School aliases
 alias iaed="gcc -Wall -Wextra -Werror -ansi -pedantic"
 alias valgrind="valgrind -s --tool=memcheck"
-
+alias simul="java -jar simulador-6-5-2022.jar"
