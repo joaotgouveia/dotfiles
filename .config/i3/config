@@ -11,7 +11,7 @@ default_border none
 workspace_layout tabbed
 
 # Window label color
-client.focused  #5ba276 #5ba276 #282a36 #5ba276 #5ba276
+client.focused  #c1c1c1 #c1c1c1 #282a36 #c1c1c1 #c1c1c1
 client.unfocused #222222  #222222 #888888 #222222 #222222
 
 # Window title align
