@@ -9,7 +9,7 @@ name = "awesome6"
 
 [[block]]
 block = "net"
-device = "wlp0s20f3"
+device = "wlan0"
 format = "{signal_strength} @ {ssid}"
 interval = 5
 
