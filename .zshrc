@@ -15,7 +15,6 @@ neofetch
 # General aliases
 alias clear="clear;neofetch"
 alias shutdown="sudo shutdown now"
-alias reboot="sudo reboot"
 alias mv="mv -v"
 alias rm="rm -I"
 alias reset="reset;neofetch"
