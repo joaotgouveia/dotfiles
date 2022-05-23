@@ -30,8 +30,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+f exec --no-startup-id qutebrowser
 # Launch dmenu
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run -h 25 -z 980
-# Launch spotify
-bindsym $mod+Shift+s exec --no-startup-id spotify
+# Launch spotify tui
+bindsym $mod+Shift+s exec --no-startup-id alacritty -e spt
 # Print screen
 bindsym Print exec flameshot gui
 
@@ -48,9 +48,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Media keys for spotify with playerctl
-bindsym XF86AudioPlay exec --no-startup-id playerctl -p spotify play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl -p spotify next
-bindsym XF86AudioPrev exec --no-startup-id playerctl -p spotify previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl -p spotifyd play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl -p spotifyd next
+bindsym XF86AudioPrev exec --no-startup-id playerctl -p spotifyd previous
 
 # change focus
 bindsym $mod+h focus left
