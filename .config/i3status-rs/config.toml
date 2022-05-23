@@ -5,22 +5,6 @@ name = "modern"
 name = "awesome6"
 
 [[block]]
-block = "music"
-player = "spotify"
-max_width = 25
-dynamic_width = true
-format = "{title} by {artist} "
-marquee_interval = 0
-marquee_speed = 0.3
-on_click = "spotify"
-on_collapsed_click = "spotify"
-[block.theme_overrides]
-info_bg = "#c1c1c1"
-idle_bg = "#c1c1c1"
-info_fg = "#282a36"
-idle_fg = "#282a36"
-
-[[block]]
 block = "sound"
 device = "hw:2,0"
 format = "{volume}"
