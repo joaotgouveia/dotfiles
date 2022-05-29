@@ -15,7 +15,6 @@ neofetch
 # General aliases
 alias clear="clear;neofetch"
 alias mv="mv -v"
-alias rm="rm -I"
 # Git bare repo alias for dotfiles repo
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 # Copying to clipboard
@@ -23,4 +22,4 @@ alias cpc="xclip -sel c < "
 # School aliases
 alias iaed="gcc -Wall -Wextra -Werror -ansi -pedantic"
 alias valgrind="valgrind -s --tool=memcheck"
-alias simul="java -jar simulador-6-5-2022.jar"
+alias simul="java -jar /home/joaotgouveia/Escola/IAC/simulador-23-5-2022.jar"
