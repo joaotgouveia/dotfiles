@@ -9,8 +9,8 @@ block = "sound"
 device = "hw:2,0"
 format = "{volume}"
 [block.theme_overrides]
-idle_bg = "#818181"
-info_bg = "#818181"
+idle_bg = "#f34c53"
+info_bg = "#f34c53"
 info_fg = "#282a36"
 idle_fg = "#282a36"
 
@@ -19,7 +19,7 @@ block = "cpu"
 interval = 1
 format = "{utilization}"
 [block.theme_overrides]
-idle_bg = "#c1c1c1"
+idle_bg = "#009784"
 idle_fg = "#282a36"
 
 [[block]]
@@ -28,7 +28,7 @@ label = "RTX 3060"
 show_temperature = false
 show_memory = false
 [block.theme_overrides]
-idle_bg = "#818181"
+idle_bg = "#f34c53"
 idle_fg = "#282a36"
 
 [[block]]
@@ -37,5 +37,5 @@ format = "%H:%M, %d %b"
 timezone = "Europe/Lisbon"
 interval = 60
 [block.theme_overrides]
-idle_bg = "#c1c1c1"
+idle_bg = "#009784"
 idle_fg = "#282a36"
