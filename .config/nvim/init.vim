@@ -3,6 +3,7 @@ set encoding=utf-8
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set expandtab
 set nohlsearch
 set noshowmode
 set noshowcmd
@@ -13,7 +14,6 @@ set termguicolors
 set ignorecase
 set smartcase
 set clipboard+=unnamedplus
-filetype plugin on
 syntax on
 let mapleader = " "
 
