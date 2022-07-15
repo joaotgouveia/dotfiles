@@ -14,7 +14,6 @@ set termguicolors
 set ignorecase
 set smartcase
 set clipboard+=unnamedplus
-filetype plugin on
 syntax on
 let mapleader = " "
 
