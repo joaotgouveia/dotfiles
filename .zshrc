@@ -19,3 +19,7 @@ alias mv="mv -v"
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 # Copying to clipboard
 alias cpc="xclip -sel c < "
+# VSCodium
+alias code="codium"
+# School
+runpo="java -cp prr-core/prr-core.jar:prr-app/prr-app.jar:po-uilib-202209081626/po-uilib.jar prr.app.App"
