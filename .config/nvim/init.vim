@@ -65,6 +65,7 @@ map <C-l> <C-w>l
 " Split opening shortcuts
 noremap <leader>v :vsplit<space>
 
+if !exists('g:vscode')
 " Auto-pairs
 inoremap " ""<left>
 inoremap ' ''<left>
@@ -171,3 +172,5 @@ autocmd FileType js inoremap >t switch<space>(<++>)<space>{<enter>case<space><++
 autocmd FileType js inoremap >w while<space>(<++>)<space>{<enter><++><enter>}
 " For
 autocmd FileType js inoremap >c for<space>(<++>;<space><++>;<space><++>)<space>{<enter><++><enter>}
+
+endif
