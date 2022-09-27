@@ -31,7 +31,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # open browser
-bindsym $mod+Shift+f exec --no-startup-id qutebrowser
+bindsym $mod+Shift+f exec --no-startup-id firefox
 # open discord
 bindsym $mod+Shift+d exec --no-startup-id discord
 
