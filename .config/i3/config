@@ -34,6 +34,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+f exec --no-startup-id firefox
 # open discord
 bindsym $mod+Shift+d exec --no-startup-id discord
+# open editor
+bindsym $mod+Shift+f exec --no-startup-id codium
 
 # Lock screen
 bindsym $mod+Shift+e exec --no-startup-id betterlockscreen -l --time-format %H:%M
