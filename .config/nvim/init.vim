@@ -65,6 +65,8 @@ map <C-l> <C-w>l
 " Split opening shortcuts
 noremap <leader>v :vsplit<space>
 
+if !exists('g:vscode')
+
 " Auto-pairs
 inoremap " ""<left>
 inoremap ' ''<left>
@@ -73,12 +75,11 @@ inoremap { {}<left>
 inoremap [ []<left>
 inoremap ` ``<left>
 
+
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 	" Lightline status line
 	Plug 'itchyny/lightline.vim'
-	" Theme
-	Plug 'RRethy/nvim-base16'
 	" Css colors
 	Plug 'ap/vim-css-color'
 	" Parser and better syntax highlighting
@@ -89,16 +90,13 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'tpope/vim-surround'
 	" Git integration
 	Plug 'airblade/vim-gitgutter'
+	" Theme
+	Plug 'RRethy/nvim-base16'
 call plug#end()
-
-" Gitgutter settings
-nmap <leader>hn <Plug>(GitGutterNextHunk)
-nmap <leader>hp <Plug>(GitGutterPrevHunk)
-let g:gitgutter_enabled = 1
-let g:gitgutter_map_keys = 0
 
 " Initializing theme
 colorscheme base16-material-palenight
+
 let g:lightline = {
 	\ 'colorscheme': 'wombat',
 	\ 'active': {
@@ -106,6 +104,12 @@ let g:lightline = {
 	\	'right': [ [ 'filetype' ], [ 'fileencoding' ] ]
 	\ },
 	\ }
+
+" Gitgutter settings
+nmap <leader>hn <Plug>(GitGutterNextHunk)
+nmap <leader>hp <Plug>(GitGutterPrevHunk)
+let g:gitgutter_enabled = 1
+let g:gitgutter_map_keys = 0
 
 " Enabling treesitter highlighting and folding
 lua << EOF
@@ -157,3 +161,5 @@ autocmd FileType c inoremap >s struct<space><++><space>{<enter><++><enter>};
 autocmd FileType c inoremap >t switch<space>(<++>)<space>{<enter>case<space><++>:<enter><++><enter>}
 " Create tags file for tag jumping and autocomplete
 autocmd! VimLeave *.c !ctags -R .
+
+endif
