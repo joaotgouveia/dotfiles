@@ -65,7 +65,22 @@ map <C-l> <C-w>l
 " Split opening shortcuts
 noremap <leader>v :vsplit<space>
 
-if !exists('g:vscode')
+if exists('g:vscode')
+
+"nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
+"xnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.navigateDown')<CR>
+"nnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.navigateUp')<CR>
+"xnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.navigateUp')<CR>
+"nnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
+"xnoremap <silent> <C-h> :call VSCodeNotify('workbench.action.navigateLeft')<CR>
+"nnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
+"xnoremap <silent> <C-l> :call VSCodeNotify('workbench.action.navigateRight')<CR>
+" Switch Buffers
+nnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.nextEditor')<CR>
+xnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.nextEditor')<CR>
+nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.previousEditor')<CR>
+xnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.previousEditor')<CR>
+else
 
 " Auto-pairs
 inoremap " ""<left>
