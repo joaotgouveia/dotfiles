@@ -20,21 +20,6 @@ let mapleader = " "
 " Centering doc after entering insert mode
 autocmd InsertEnter * norm zz
 
-" Remove trailling whitespace
-autocmd BufWritePre * %s/\s\+$//e
-
-" Auto commenting disabled by default
-autocmd FileType * setlocal formatoptions-=cro
-
-" Remapping tag jumping
-nnoremap X <C-]>
-
-" Remapping auto-completion
-inoremap <leader><CR> <C-n>
-
-" Visual mode bind is v-block
-noremap v <C-v>
-
 " Remapping L to go to the end of a line and H to beginning
 map L $
 map H 0
@@ -56,12 +41,6 @@ map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Splits open at the bottom and right
 set splitbelow splitright
 
-" Split navigation shortcuts
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " Split opening shortcuts
 noremap <leader>v :vsplit<space>
 
@@ -80,7 +59,26 @@ nnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.nextEditor')<CR>
 xnoremap <silent> <C-k> :call VSCodeNotify('workbench.action.nextEditor')<CR>
 nnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.previousEditor')<CR>
 xnoremap <silent> <C-j> :call VSCodeNotify('workbench.action.previousEditor')<CR>
+
 else
+
+" Remove trailling whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
+" Auto commenting disabled by default
+autocmd FileType * setlocal formatoptions-=cro
+
+" Remapping tag jumping
+nnoremap X <C-]>
+
+" Remapping auto-completion
+inoremap <leader><CR> <C-n>
+
+" Split navigation shortcuts
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Auto-pairs
 inoremap " ""<left>
@@ -89,7 +87,6 @@ inoremap ( ()<left>
 inoremap { {}<left>
 inoremap [ []<left>
 inoremap ` ``<left>
-
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -119,7 +116,6 @@ let g:lightline = {
 	\	'right': [ [ 'filetype' ], [ 'fileencoding' ] ]
 	\ },
 	\ }
-
 " Gitgutter settings
 nmap <leader>hn <Plug>(GitGutterNextHunk)
 nmap <leader>hp <Plug>(GitGutterPrevHunk)
@@ -135,10 +131,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-set foldnestmax=1
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-nmap <CR> zc
 
 " Setting vimwiki default language to markdown
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
