@@ -36,8 +36,10 @@ bindsym $mod+Shift+f exec --no-startup-id firefox
 bindsym $mod+Shift+d exec --no-startup-id discord
 # open editor
 bindsym $mod+Shift+c exec --no-startup-id codium
+# print screen
+bindsym Print exec flameshot gui
 
-# Lock screen
+# lock screen
 bindsym $mod+Shift+e exec --no-startup-id betterlockscreen -l --time-format %H:%M
 
 # change focus
@@ -135,7 +137,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3status-rust bar
+# start i3status-rust bar
 bar {
 	font pango:Hack, Font Awesome 6 Free
 	position top
