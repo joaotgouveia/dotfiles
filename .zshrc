@@ -14,11 +14,10 @@ neofetch
 
 # General aliases
 alias clear="clear;neofetch"
-alias shutdown="sudo shutdown now"
 alias mv="mv -v"
 alias rm="rm -I"
 alias reset="reset;neofetch"
-alias code="codium"
+alias shutdown="shutdown now"
 # Git bare repo alias for dotfiles repo
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 # Copying to clipboard

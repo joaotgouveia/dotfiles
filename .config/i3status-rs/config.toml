@@ -1,25 +1,31 @@
 [theme]
-name = "space-villain"
+theme = "space-villain"
 [theme.overrides]
 good_bg = "#631261"
 idle_bg = "#194b92"
 
 [icons]
-name = "awesome6"
+icons = "awesome6"
 
 [[block]]
 block = "net"
 device = "wlan0"
-format = "{signal_strength} @ {ssid}"
 interval = 5
+format = " $icon $signal_strength @ $ssid "
 
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage}"
 
 [[block]]
 block = "time"
-format = "%H:%M, %d %b"
 timezone = "Europe/Lisbon"
 interval = 60
+
+[[block]]
+block = "sound"
+device = "hw:2,0"
+format = " $icon $volume "
+[block.theme_overrides]
+idle_bg = "#021d3b"
+
