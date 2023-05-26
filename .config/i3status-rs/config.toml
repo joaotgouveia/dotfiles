@@ -1,13 +1,13 @@
 [theme]
-name = "modern"
+theme = "modern"
 
 [icons]
-name = "awesome6"
+icons = "awesome6"
 
 [[block]]
 block = "sound"
 device = "hw:2,0"
-format = "{volume}"
+format = "$icon $volume "
 [block.theme_overrides]
 idle_bg = "#459544"
 info_bg = "#459544"
@@ -17,23 +17,20 @@ idle_fg = "#282a36"
 [[block]]
 block = "cpu"
 interval = 1
-format = "{utilization}"
+format = "$icon i7 @$utilization "
 [block.theme_overrides]
 idle_bg = "#009784"
 idle_fg = "#282a36"
 
 [[block]]
 block = "nvidia_gpu"
-label = "RTX 3060"
-show_temperature = false
-show_memory = false
+format = "$icon RTX 3060 @$utilization "
 [block.theme_overrides]
 idle_bg = "#459544"
 idle_fg = "#282a36"
 
 [[block]]
 block = "time"
-format = "%H:%M, %d %b"
 timezone = "Europe/Lisbon"
 interval = 60
 [block.theme_overrides]
