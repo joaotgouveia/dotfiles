@@ -22,3 +22,9 @@ alias shutdown="shutdown now"
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 # Copying to clipboard
 alias cpc="xclip -sel c < "
+# Copying FM save to git repo
+alias cpfm="cp ~/Games/epic-games-store/drive_c/users/joaotgouveia/Documents/Sports\ Interactive/Football\ Manager\ 2024/games/João\ Gouveia\ -\ Brighton.fm fm"
+
+# Removing binds that affect rTorrent
+stty stop undef
+stty start undef
