@@ -36,6 +36,8 @@ bindsym $mod+Shift+f exec --no-startup-id firefox
 bindsym $mod+Shift+d exec --no-startup-id discord
 # open editor
 bindsym $mod+Shift+c exec --no-startup-id code
+# open lutris
+bindsym $mod+Shift+g exec --no-startup-id lutris
 # print screen
 bindsym Print exec flameshot gui
 
