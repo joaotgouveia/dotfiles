@@ -38,6 +38,8 @@ bindsym $mod+Shift+d exec --no-startup-id discord
 bindsym $mod+Shift+c exec --no-startup-id code
 # open lutris
 bindsym $mod+Shift+g exec --no-startup-id lutris
+# open obsidian
+bindsym $mod+Shift+o exec --no-startup-id obsidian
 # print screen
 bindsym Print exec flameshot gui
 
