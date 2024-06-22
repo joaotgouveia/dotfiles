@@ -1,18 +1,4 @@
-# Path to oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# ESof setup
-export POSTGRES_DB=hedb
-export POSTGRES_USER=postgres
-export POSTGRES_PASSWORD=postgres
-export POSTGRES_HOST_AUTH_METHOD=trust
-export PSQL_INT_TEST_DB_USERNAME=postgres
-export PSQL_INT_TEST_DB_PASSWORD=postgres
-export cypress_psql_db_name=hedb
-export cypress_psql_db_username=postgres
-export cypress_psql_db_password=postgres
-export cypress_psql_db_host=localhost
-export cypress_psql_db_port=5432
+# Sets the environment for interactive shells
 
 # History
 HISTSIZE=1000
@@ -46,6 +32,7 @@ alias mv="mv -v"
 alias rm="rm -I"
 alias reset="reset;neofetch"
 alias shutdown="shutdown now"
+alias fmtbib="biber --tool --nolog --onlylog --output_align --output_indent=2 --output_fieldcase=lower --output_file=/home/joaotgouveia/docs/bibliography/library.bib ~/docs/bibliography/library.bib && sed -i -e 's/arxiv/arXiv/gI' -e 's/journaltitle/journal     /' -e 's/date/year/' ~/docs/bibliography/library.bib"
 # Git bare repo alias for dotfiles repo
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 # Copying to clipboard
@@ -54,3 +41,4 @@ alias cpc="xclip -sel c < "
 # Removing binds that affect rTorrent
 stty stop undef
 stty start undef
+
